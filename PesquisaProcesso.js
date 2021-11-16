@@ -14,7 +14,9 @@ const dataSource = [
     nome_requerente: 'Joana dos Santos',
     numero_matricula: '195-8',
     numero_processo: 'Iprev-564/2021',
+    origem: 'Iprev',
     dt_chegada_iprev: '10/09/2021',
+    parentesco: 'Cônjuge',
   },
   {
     key: '2',
@@ -23,7 +25,9 @@ const dataSource = [
     nome_requerente: 'Sérgio Rodrigues',
     numero_matricula: '965-1',
     numero_processo: 'Detran-230/2021',
+    origem: 'Detran',
     dt_chegada_iprev: '05/10/2021',
+    parentesco: 'Filho solteiro (menor de 21 anos)',
   },
 ];
 
@@ -55,9 +59,19 @@ const columns = [
     key: 'numero_processo',
   },
   {
+    title: 'Órgão de Origem',
+    dataIndex: 'origem',
+    key: 'origem',
+  },
+  {
     title: 'Data Chegada',
     dataIndex: 'dt_chegada_iprev',
     key: 'dt_chegada_iprev',
+  },
+  {
+    title: 'Parentesco',
+    dataIndex: 'parentesco',
+    key: 'parentesco',
   },
 ];
 
@@ -99,7 +113,7 @@ class PesquisaProcesso extends React.Component {
     return (
       <div>
         <Modal
-        width={900}
+        width={1200}
         heigth={500}
         title="Pesquisa de Processos"
         visible={this.state.visible}
